@@ -108,7 +108,6 @@ function scroll(e) {
         var top = $window.scrollTop();
         var bottom = top + windowHeight * 0.9;
 
-        console.log(next.top, next.top <= bottom, top + windowHeight, documentHeight);
         if (next.top <= bottom || top + windowHeight >= documentHeight) {
             next.element.addClass(options.active);
             items.shift();
