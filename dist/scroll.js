@@ -1,8 +1,8 @@
 /** 
 * scroll.js 
-* Adds and removes classes depending on the scroll 
+* Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.0 
+* @version 1.0.1 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
