@@ -2,7 +2,7 @@
 * scroll.js 
 * Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.1 
+* @version 1.0.2 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
@@ -22,9 +22,11 @@ var next = void 0;
 var resizeTimeout = void 0;
 var scrollTimeout = void 0;
 var windowHeight = void 0;
+var windowHeightGapped = void 0;
 
 var options = {
     active: 'active',
+    gap: 0.1,
     priority: 'scroll-priority',
     selector: '.scroll'
 };
@@ -68,6 +70,7 @@ function resize() {
 
 function resizeCalculate() {
     windowHeight = $window.height();
+    windowHeightGapped = windowHeight * (1 - options.gap);
     documentHeight = document.body.scrollHeight - windowHeight * 0.3;
 
     var i = void 0,
@@ -106,7 +109,7 @@ function scroll(e) {
 
     if (next && !scrollTimeout) {
         var top = $window.scrollTop();
-        var bottom = top + windowHeight * 0.9;
+        var bottom = top + windowHeightGapped;
 
         if (next.top <= bottom || top + windowHeight >= documentHeight) {
             next.element.addClass(options.active);

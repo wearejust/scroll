@@ -6,9 +6,11 @@ let next;
 let resizeTimeout;
 let scrollTimeout;
 let windowHeight;
+let windowHeightGapped;
 
 let options = {
     active: 'active',
+    gap: 0.1,
     priority: 'scroll-priority',
     selector: '.scroll'
 };
@@ -54,6 +56,7 @@ function resize() {
 
 function resizeCalculate() {
     windowHeight = $window.height();
+    windowHeightGapped = windowHeight * (1 - options.gap);
     documentHeight = document.body.scrollHeight - windowHeight * 0.3;
 
     let i, item;
@@ -92,7 +95,7 @@ function scroll(e) {
 
     if (next && !scrollTimeout) {
         let top = $window.scrollTop();
-        let bottom = top + windowHeight * 0.9;
+        let bottom = top + windowHeightGapped;
 
         if (next.top <= bottom || top + windowHeight >= documentHeight) {
             next.element.addClass(options.active);
