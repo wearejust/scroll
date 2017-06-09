@@ -1,6 +1,6 @@
 {
     "name": "scroll.js",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Adds a class when scrolling past selected elements",
     "main": "dist/scroll.js",
     "license": "MIT",

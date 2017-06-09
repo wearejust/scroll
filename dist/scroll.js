@@ -2,7 +2,7 @@
 * scroll.js 
 * Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.2 
+* @version 1.0.3 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
@@ -120,7 +120,7 @@ function scroll(e) {
                 $window.off('resize', resize);
                 $window.off('scroll', scroll);
             } else {
-                var delay = next.top < top || next.top == next.top ? 0 : 200 + next.hold;
+                var delay = next.top < top || next.top == item.top ? 0 : 200 + next.hold;
                 next = item;
                 scrollTimeout = setTimeout(scroll, delay);
             }

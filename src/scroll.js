@@ -107,7 +107,7 @@ function scroll(e) {
                 $window.off('scroll', scroll);
 
             } else {
-                let delay = (next.top < top || next.top == next.top) ? 0 : (200 + next.hold);
+                let delay = (next.top < top || next.top == item.top) ? 0 : (200 + next.hold);
                 next = item;
                 scrollTimeout = setTimeout(scroll, delay);
             }
