@@ -10,6 +10,8 @@ let windowHeightGapped;
 
 let options = {
     active: 'active',
+    delay: 200,
+    delayHorizontal: 50,
     gap: 0.1,
     priority: 'scroll-priority',
     selector: '.scroll'
@@ -52,7 +54,6 @@ function resize() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(resizeCalculate, 100);
 }
-
 
 function resizeCalculate() {
     windowHeight = $window.height();
@@ -107,7 +108,7 @@ function scroll(e) {
                 $window.off('scroll', scroll);
 
             } else {
-                let delay = (next.top < top || next.top == item.top) ? 0 : (200 + next.hold);
+                let delay = (next.top < top) ? 0 : ((next.top == item.top) ? options.delayHorizontal : (options.delay + next.hold));
                 next = item;
                 scrollTimeout = setTimeout(scroll, delay);
             }

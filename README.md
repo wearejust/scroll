@@ -21,6 +21,9 @@ var Scroll = require('scroll.js');
 $(function() {
     Scroll.init({
 		active: 'active',
+		delay: 200,
+		delayHorizontal: 50,
+		gap: 0.1,
 		priority: 'scroll-priority',
 		selector: '.scroll'
     });
