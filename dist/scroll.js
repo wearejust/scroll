@@ -2,7 +2,7 @@
 * scroll.js 
 * Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.4 
+* @version 1.0.5 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
@@ -76,13 +76,16 @@ function resizeCalculate() {
     documentHeight = document.body.scrollHeight - windowHeight * 0.3;
 
     var i = void 0,
+        o = void 0,
         item = void 0;
     for (i = 0; i < items.length; i++) {
         item = items[i];
-        item.top = item.element.offset().top;
+        o = item.element.offset();
+        item.top = o.top;
+        item.left = o.left;
     }
 
-    var keys = ['sort', 'top'];
+    var keys = ['sort', 'top', 'left'];
     items.sort(function (a, b) {
         var i = 0;
         var aVal = a[keys[i]];

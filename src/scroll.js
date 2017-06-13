@@ -60,14 +60,15 @@ function resizeCalculate() {
     windowHeightGapped = windowHeight * (1 - options.gap);
     documentHeight = document.body.scrollHeight - windowHeight * 0.3;
 
-    let i, item;
+    let i, o, item;
     for (i=0; i<items.length; i++) {
         item = items[i];
-        item.top = item.element.offset().top;
-
+        o = item.element.offset();
+        item.top = o.top;
+        item.left = o.left;
     }
 
-    let keys = ['sort', 'top'];
+    let keys = ['sort', 'top', 'left'];
     items.sort(function(a, b) {
         let i = 0;
         let aVal = a[keys[i]];
