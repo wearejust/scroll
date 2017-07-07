@@ -1,13 +1,13 @@
-# scroll.js
+# Scroll
 
 ### Installation
 ```
-npm install scroll.js --save-dev
+npm install @wearejust/scroll --save-dev
 ```
 
 ### Usage
 ```javascript
-var Scroll = require('scroll.js');
+var Scroll = require('@wearejust/scroll');
 
 $(function() {
     Scroll.init();
@@ -16,7 +16,7 @@ $(function() {
 
 #### With options
 ```javascript
-var Scroll = require('scroll.js');
+var Scroll = require('@wearejust/scroll');
 
 $(function() {
     Scroll.init({

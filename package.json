@@ -1,6 +1,6 @@
 {
-    "name": "scroll.js",
-    "version": "1.0.5",
+    "name": "@wearejust/scroll",
+    "version": "1.0.6",
     "description": "Adds a class when scrolling past selected elements",
     "main": "dist/scroll.js",
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/wearejust/scroll.js"
+        "url": "https://github.com/wearejust/scroll"
     },
     "devDependencies": {
         "babel-preset-es2015-ie": "^6.7.0",

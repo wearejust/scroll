@@ -1,8 +1,8 @@
 /** 
-* scroll.js 
+* @wearejust/scroll 
 * Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.5 
+* @version 1.0.6 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
