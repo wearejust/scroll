@@ -24,6 +24,7 @@ $(function() {
 		delay: 200,
 		delayHorizontal: 50,
 		gap: 0.1,
+		parseOnInit: true,
 		priority: 'scroll-priority',
 		selector: '.scroll'
     });

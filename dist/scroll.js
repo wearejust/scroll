@@ -2,7 +2,7 @@
 * @wearejust/scroll 
 * Adds a class when scrolling past selected elements 
 * 
-* @version 1.0.6 
+* @version 1.0.7 
 * @author Emre Koc <emre.koc@wearejust.com> 
 */
 'use strict';
@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 exports.init = init;
-var $body = $('body');
+exports.parse = parse;
 var $window = $(window);
 var documentHeight = void 0;
 var items = [];
@@ -29,6 +29,7 @@ var options = {
     delay: 200,
     delayHorizontal: 50,
     gap: 0.1,
+    parseOnInit: true,
     priority: 'scroll-priority',
     selector: '.scroll'
 };
@@ -36,11 +37,13 @@ var options = {
 function init(opts) {
     options = _extends(options, opts || {});
 
-    parse();
+    if (options.parseOnInit) {
+        parse();
+    }
 }
 
 function parse(container) {
-    if (!container) container = $body;
+    if (!container) container = $('body');
     var elements = container.filter(options.selector).add(container.find(options.selector));
     if (elements.length) {
         elements.removeClass(options.active);

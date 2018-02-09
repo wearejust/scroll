@@ -1,4 +1,3 @@
-let $body = $('body');
 let $window = $(window);
 let documentHeight;
 let items = [];
@@ -13,6 +12,7 @@ let options = {
     delay: 200,
     delayHorizontal: 50,
     gap: 0.1,
+    parseOnInit: true,
     priority: 'scroll-priority',
     selector: '.scroll'
 };
@@ -20,11 +20,13 @@ let options = {
 export function init(opts) {
     options = Object.assign(options, opts || {});
 
-    parse();
+    if (options.parseOnInit) {
+        parse();
+    }
 }
 
-function parse(container) {
-    if (!container) container = $body;
+export function parse(container) {
+    if (!container) container = $('body');
     let elements = container.filter(options.selector).add(container.find(options.selector));
     if (elements.length) {
         elements.removeClass(options.active);
